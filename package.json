@@ -1,0 +1,83 @@
+{
+  "name": "aldaba-clean_code_avanzado-septiembre",
+  "version": "1.22.8",
+  "description": "Software principles and design patterns for TypeScript development",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@hotmail.com",
+    "url": "https://albertobasalo.dev"
+  },
+  "homepage": "https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre/issues"
+  },
+  "scripts": {
+    "1-1-1": "ts-node ./src/1-creational/1-singleton/examples/1-singleton-static.ts",
+    "1-1-2": "ts-node ./src/1-creational/1-singleton/examples/2-singleton-instance.ts",
+    "1-1-3": "ts-node ./src/1-creational/1-singleton/examples/3-singleton-value.ts",
+    "1-1-4": "ts-node ./src/1-creational/1-singleton/tasks/4-configuration.ts",
+    "1-2-1": "ts-node ./src/1-creational/2-prototype/examples/1-prototype-shallow.ts",
+    "1-2-2": "ts-node ./src/1-creational/2-prototype/examples/2-prototype-deep.ts",
+    "1-2-3": "ts-node ./src/1-creational/2-prototype/tasks/3-booking-cancellation.ts",
+    "1-3-1": "ts-node ./src/1-creational/3-factory/examples/1-factory-concrete.ts",
+    "1-3-2": "ts-node ./src/1-creational/3-factory/examples/2-factory-abstract.ts",
+    "1-3-3": "ts-node ./src/1-creational/3-factory/tasks/3-loggers-concrete.ts",
+    "1-3-4": "ts-node ./src/1-creational/3-factory/tasks/4-loggers-abstract.ts",
+    "1-4-1": "ts-node ./src/1-creational/4-builder/examples/1-builder-alone.ts",
+    "1-4-2": "ts-node ./src/1-creational/4-builder/examples/2-builder-director.ts",
+    "1-4-3": "ts-node ./src/1-creational/4-builder/examples/3-builder-director-plus.ts",
+    "1-4-4": "ts-node ./src/1-creational/4-builder/tasks/4-logger-builder.ts",
+    "1-4-5": "ts-node ./src/1-creational/4-builder/tasks/5-logger-director.ts",
+    "2-1-1": "ts-node ./src/2-structural/1-adapter/examples/1-adapter.ts",
+    "2-1-2": "ts-node ./src/2-structural/1-adapter/tasks/2-log-adapter.ts",
+    "2-2-0": "ts-node ./src/2-structural/2-bridge/examples/0-no-bridge.ts",
+    "2-2-1": "ts-node ./src/2-structural/2-bridge/examples/1-bridge.ts",
+    "2-2-2": "ts-node ./src/2-structural/2-bridge/tasks/2-no-bridge-bookings.ts",
+    "2-2-3": "ts-node ./src/2-structural/2-bridge/tasks/3-bridge-bookings.ts",
+    "2-3-1": "ts-node ./src/2-structural/3-decorator/examples/1-decorator.ts",
+    "2-3-2": "ts-node ./src/2-structural/3-decorator/tasks/2-no-decorator-bookings.ts",
+    "2-3-3": "ts-node ./src/2-structural/3-decorator/tasks/2-decorator-bookings.ts",
+    "2-4-0": "ts-node ./src/2-structural/4-facade/examples/0-no-facade.ts",
+    "2-4-1": "ts-node ./src/2-structural/4-facade/examples/1-facade.ts",
+    "2-4-2": "ts-node ./src/2-structural/4-facade/tasks/2-no-facade-bookings.ts",
+    "2-4-3": "ts-node ./src/2-structural/4-facade/tasks/3-facade-bookings.ts",
+    "3-1-1": "ts-node ./src/3-behavioral/1-strategy/examples/1-strategy.ts",
+    "3-1-2": "ts-node ./src/3-behavioral/1-strategy/tasks/2-no-strategy-logger.ts",
+    "3-1-3": "ts-node ./src/3-behavioral/1-strategy/tasks/3-strategy-environment-logger.ts",
+    "3-1-4": "ts-node ./src/3-behavioral/1-strategy/tasks/4-strategy-category-logger.ts",
+    "3-2-1": "ts-node ./src/3-behavioral/2-observer/examples/1-observer.ts",
+    "3-2-2": "ts-node ./src/3-behavioral/2-observer/tasks/2-subject-observer.ts",
+    "3-3-1": "ts-node ./src/3-behavioral/3-command/examples/1-command.ts",
+    "3-3-2": "ts-node ./src/3-behavioral/3-command/tasks/2-command-bookings.ts",
+    "3-4-1": "ts-node ./src/3-behavioral/4-template/examples/1-template.ts",
+    "3-4-2": "ts-node ./src/3-behavioral/4-template/tasks/2-template-bookings-log.ts",
+    "build": "tsc -p tsconfig.json",
+    "ts-node": "ts-node",
+    "format": "prettier --write \"./**/*.{ts,json}\"",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "prerelease": "standard-version ",
+    "release": "git push --follow-tags origin main",
+    "update": "ncu -u"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "npm-check-updates": "^16.1.2",
+    "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
+}

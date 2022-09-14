@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "types": ["node"],
+    "lib": ["ES6", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@ab/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

@@ -1,0 +1,74 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["prettier", "@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {},
+  "rules": {
+    "complexity": [
+      "warn",
+      {
+        "max": 10
+      }
+    ],
+    "curly": ["warn", "all"],
+    "max-depth": ["warn", 1],
+    "max-lines": ["warn", 100],
+    "max-lines-per-function": ["warn", 20],
+    "max-statements": ["warn", 10],
+    "max-nested-callbacks": ["warn", 1],
+    "max-params": ["warn", 2],
+    "no-magic-numbers": [
+      "warn",
+      {
+        "detectObjects": false,
+        "enforceConst": true,
+        "ignore": [-1, 0, 1, 2, 10, 100],
+        "ignoreArrayIndexes": true
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1,
+        "maxEOF": 1
+      }
+    ],
+    "no-nested-ternary": "warn",
+    "no-unused-vars": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "warn",
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "constructors": "no-public"
+        }
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
+    "@typescript-eslint/no-empty-function": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  }
+}
