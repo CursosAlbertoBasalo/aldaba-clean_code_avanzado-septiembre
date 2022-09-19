@@ -1,0 +1,14 @@
+{
+  "port": 8080,
+  "host": "localhost",
+  "repository": {
+    "server": "http://localhost:8080/repository/",
+    "database": "my-app-db",
+    "user": "admin",
+    "password": "1234"
+  },
+  "security": {
+    "secret": "my-secret",
+    "expiresIn": "1h"
+  }
+}
