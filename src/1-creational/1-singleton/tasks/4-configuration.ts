@@ -17,7 +17,7 @@ export type Configuration = {
 };
 export class ConfigurationService {
   private static instance: ConfigurationService;
-  public readonly configuration: Configuration | undefined;
+  public readonly configuration!: Configuration;
 
   constructor() {
     if (!ConfigurationService.instance) {
@@ -35,8 +35,7 @@ export class ConfigurationService {
   }
 
   public static getConfiguration(): Configuration {
-    throw "not implemented";
-    // ToDo:
+    return ConfigurationService.getInstance().configuration;
   }
 
   private load() {
