@@ -1,6 +1,6 @@
 # Prototype
 
-## Creates a copy (clone) of an existing object with controlled mutations
+## Creates a copy (_clone_) of an existing object with controlled changes (_mutations_)
 
 ### Links
 
