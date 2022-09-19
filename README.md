@@ -2,10 +2,14 @@
 
 > Advanced clean code techniques for a better codebase.
 
-```terminal
-git clone https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre 
+[Code repository](https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre)
+
+```bash
+# Clone and install
+git clone https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre.git 
 cd aldaba-clean_code_avanzado-septiembre
 npm install
+# npm run sample number...
 ```
 
 ## 🎯 Motivation
