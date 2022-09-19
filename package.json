@@ -7,14 +7,14 @@
     "email": "albertobasalo@hotmail.com",
     "url": "https://albertobasalo.dev"
   },
-  "homepage": "https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre#readme",
+  "homepage": "https://github.com/L-ab-s/aldaba-clean_code_avanzado-septiembre#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre.git"
+    "url": "git+https://github.com/L-ab-s/aldaba-clean_code_avanzado-septiembre.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LiveCodeLabs/aldaba-clean_code_avanzado-septiembre/issues"
+    "url": "https://github.com/L-ab-s/aldaba-clean_code_avanzado-septiembre/issues"
   },
   "scripts": {
     "1-1-1": "ts-node ./src/1-creational/1-singleton/examples/1-singleton-static.ts",
