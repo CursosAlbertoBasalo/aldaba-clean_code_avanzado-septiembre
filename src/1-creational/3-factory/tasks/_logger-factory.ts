@@ -28,7 +28,7 @@ class Logger {
     } else {
       this.writeFile(message);
     }
-    // 🤢 what happens when a new formatter or writer arrives?
+    // ToDo: 🤢 what happens when a new formatter or writer arrives?
   }
 
   private writeConsole(entry: string): void {

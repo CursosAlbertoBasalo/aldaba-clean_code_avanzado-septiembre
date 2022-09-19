@@ -31,11 +31,9 @@ export class ConfigurationService {
     return configuration;
   }
 }
-
-const configuration = new ConfigurationService().configuration; // 🤢 global variable
-
+const configuration = new ConfigurationService().configuration; // ToDo: 🤢 global variable
 export class App {
-  private configurationService = new ConfigurationService(); // 🤢 possible duplication
+  private configurationService = new ConfigurationService(); // ToDo: 🤢 possible duplication
 
   public static main(): void {
     console.log("🏠 App main static...");
@@ -51,7 +49,7 @@ export class App {
 }
 
 export class Repository {
-  // 🤢 dependency hell
+  // ToDo: 🤢 dependency hell
   constructor(private configuration: Configuration) {}
   public fetch() {
     console.log("📦 Fetching data from repository");

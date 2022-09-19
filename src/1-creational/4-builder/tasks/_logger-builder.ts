@@ -8,11 +8,23 @@ type LogEntry = {
   timestamp: Date;
 };
 
+interface Formatter {
+  format(entry: LogEntry): string;
+}
+
 interface Writer {
   write(entry: string): void;
 }
-interface Formatter {
-  format(entry: LogEntry): string;
+
+class JsonFormatter implements Formatter {
+  public format(entry: LogEntry): string {
+    return JSON.stringify(entry);
+  }
+}
+class SimpleFormatter implements Formatter {
+  public format(entry: LogEntry): string {
+    return `${entry.timestamp.toISOString()} : [${entry.category}] ${entry.message}`;
+  }
 }
 
 class ConsoleWriter implements Writer {
@@ -27,27 +39,23 @@ class TextFileWriter implements Writer {
   }
 }
 
-class JsonFormatter implements Formatter {
-  public format(entry: LogEntry): string {
-    return JSON.stringify(entry);
-  }
-}
-class SimpleFormatter implements Formatter {
-  public format(entry: LogEntry): string {
-    return `${entry.timestamp.toISOString()} : [${entry.category}] ${entry.message}`;
-  }
-}
-
 class Logger {
-  private writer: Writer | undefined;
   private formatter: Formatter | undefined;
+  private writer: Writer | undefined;
 
-  public setWriter(writer: Writer): void {
-    // To Do: check incompatibilities
-    this.writer = writer;
-  }
   public setFormatter(formatter: Formatter): void {
     this.formatter = formatter;
+  }
+  public setWriter(writer: Writer): void {
+    if (!this.formatter) {
+      // ToDo: 🤢 client classes needs to call formatter before
+      throw "Need a formatter";
+    }
+    if (this.formatter instanceof JsonFormatter && writer instanceof TextFileWriter) {
+      // ToDo: 🤢 client classes will need to know too much about me
+      throw "Incompatible formatter";
+    }
+    this.writer = writer;
   }
 
   public log(entry: LogEntry) {

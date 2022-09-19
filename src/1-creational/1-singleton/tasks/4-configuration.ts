@@ -46,11 +46,13 @@ export class ConfigurationService {
     return configuration;
   }
 }
+// ! no more global vars
 
 export class App {
   private configurationService = new ConfigurationService();
 
   public static main(): void {
+    // ! different approaches for get the value
     const configuration = ConfigurationService.getInstance().configuration;
     console.log("🏠 App main static...");
     console.log(configuration);
@@ -59,6 +61,7 @@ export class App {
   public run() {
     console.log("👟  App running...");
     console.log(this.configurationService.configuration);
+    // ! No more unneeded dependency params
     const repository = new Repository();
     repository.fetch();
   }
@@ -66,6 +69,7 @@ export class App {
 
 export class Repository {
   public fetch() {
+    // ! safe repetitive constructors calls
     const configurationService = new ConfigurationService();
     console.log("📦 Fetching data from repository");
     console.log(configurationService.configuration?.repository);

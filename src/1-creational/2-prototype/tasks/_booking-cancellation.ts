@@ -21,7 +21,7 @@ export class App {
   }
 
   public cancelBooking(booking: Booking): Booking {
-    // 🤢 mutable data, lost control and history
+    // ToDo: 🤢 mutable data, loose control and history
     booking.status = "Cancelled";
     booking.updatedOn = new Date();
     return booking;
