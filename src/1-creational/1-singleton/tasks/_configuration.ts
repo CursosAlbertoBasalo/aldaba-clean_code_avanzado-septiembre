@@ -31,7 +31,9 @@ export class ConfigurationService {
     return configuration;
   }
 }
+
 const configuration = new ConfigurationService().configuration; // 🤢 global variable
+
 export class App {
   private configurationService = new ConfigurationService(); // 🤢 possible duplication
 

@@ -1,6 +1,8 @@
 export class Singleton {
   private static instance: Singleton;
   private _value: unknown;
+  //public value: unknown;
+
   public get value(): unknown {
     return this._value;
   }
