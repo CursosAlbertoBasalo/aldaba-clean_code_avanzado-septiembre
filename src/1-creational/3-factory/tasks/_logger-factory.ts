@@ -11,23 +11,24 @@ type LogEntry = {
 class Logger {
   private readonly filePath = path.resolve(__dirname, "./log.txt");
 
-  constructor(public formatter = "JSON", public writer = "Console") {}
+  constructor(public formatter: "json" | "simple", public writer: "console" | "textFile") {}
 
   public log(entry: LogEntry) {
     if (!this.writer || !this.formatter) {
       throw new Error("Logger is not configured");
     }
     let message = "";
-    if (this.formatter == "JSON") {
+    if (this.formatter == "json") {
       message = this.formatJSON(entry);
     } else {
       message = this.formatSimple(entry);
     }
-    if (this.writer == "Console") {
+    if (this.writer == "console") {
       this.writeConsole(message);
     } else {
       this.writeFile(message);
     }
+    // 🤢 what happens when a new formatter or writer arrives?
   }
 
   private writeConsole(entry: string): void {
@@ -50,7 +51,7 @@ class Logger {
 class Client {
   private readonly logger: Logger;
   constructor() {
-    this.logger = new Logger();
+    this.logger = new Logger("simple", "console");
   }
   public log(entry: LogEntry) {
     this.logger.log(entry);

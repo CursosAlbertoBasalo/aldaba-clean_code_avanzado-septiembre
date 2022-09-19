@@ -1,6 +1,6 @@
 # Factory
 
-## Creates instances from different classes that implement the same interface (or extend the same base class)
+## Creates instances from different classes that implement the **same** interface (or extend the **same** base class)
 
 ### Links
 
