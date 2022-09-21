@@ -1,5 +1,4 @@
 export type Primitive = string | number | boolean;
-
 export class Product {
   public id = "";
   public timestamp = 0;
