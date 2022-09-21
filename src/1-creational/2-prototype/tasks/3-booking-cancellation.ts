@@ -1,7 +1,11 @@
 /* eslint-disable max-params */
 type BookingStatus = "Pending" | "Confirmed" | "Cancelled" | "";
 
-export class Booking {
+interface Prototype<T> {
+  clone(mutations?: Partial<T>): T;
+}
+
+export class Booking implements Prototype<Booking> {
   // ! readonly properties makes object immutable
   constructor(
     public readonly id: string,
@@ -29,15 +33,16 @@ export class Booking {
 
   public cancel(): Booking {
     // ! creates a new one copy (clone) with predefined logic changes (mutations)
-    const cancelledBooking = new Booking(
-      this.id,
-      this.destination,
-      this.departureDate,
-      this.price,
-      "Cancelled",
-      this.createdOn,
-      new Date()
-    );
+    // const cancelledBooking = new Booking(
+    //   this.id,
+    //   this.destination,
+    //   this.departureDate,
+    //   this.price,
+    //   "Cancelled",
+    //   this.createdOn,
+    //   new Date()
+    // );
+    const cancelledBooking = this.clone({ status: "Cancelled" });
     return cancelledBooking;
   }
 }
