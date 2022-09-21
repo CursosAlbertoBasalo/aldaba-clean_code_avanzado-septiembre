@@ -31,20 +31,20 @@ class Logger {
     // ToDo: 🤢 what happens when a new formatter or writer arrives?
   }
 
-  private writeConsole(entry: string): void {
-    console.log(entry);
-  }
-
-  private writeFile(entry: string): void {
-    fs.appendFileSync(this.filePath, entry + "\n");
-  }
-
   private formatJSON(entry: LogEntry): string {
     return JSON.stringify(entry);
   }
 
   private formatSimple(entry: LogEntry): string {
     return `${entry.timestamp.toISOString()} : [${entry.category}] ${entry.message}`;
+  }
+
+  private writeConsole(entry: string): void {
+    console.log(entry);
+  }
+
+  private writeFile(entry: string): void {
+    fs.appendFileSync(this.filePath, entry + "\n");
   }
 }
 
