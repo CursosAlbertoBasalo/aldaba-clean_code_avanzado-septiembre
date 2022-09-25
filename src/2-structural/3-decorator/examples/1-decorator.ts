@@ -19,11 +19,14 @@ class Decorator implements IComponent {
     return this.component.property;
   }
   public set property(value: string) {
+    // ! change internal behavior
     this.component.property = this.replaceSpacesWithUnderscores(value);
   }
   public method(param: string): string {
+    // ! change internal behavior
     return this.component.method(param).toUpperCase();
   }
+  public moreFeatures: string[] = [];
 
   private replaceSpacesWithUnderscores(param: string): string {
     return param.replace(" ", "_");
@@ -38,7 +41,10 @@ export class Client {
   }
   public doOtherThings() {
     const decorator = new Decorator(new Component());
+    // ! same external behavior...
     decorator.property = "good bye";
+    // ! ... or even more
+    decorator.moreFeatures.push("Extended without change");
     return decorator.method(decorator.property);
   }
 }

@@ -1,6 +1,6 @@
 # Decorator
 
-## Adds functionality to a class without modifying it.
+## Adds functionality to a class without modifying it, meets **the OpenClose principle**.
 
 ### Links
 
