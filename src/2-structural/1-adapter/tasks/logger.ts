@@ -31,20 +31,3 @@ export class Logger {
     this.writer.write(this.formatter.format(entry));
   }
 }
-
-export class Client {
-  private readonly logger: Logger;
-  constructor() {
-    this.logger = new Logger(new SimpleFormatter(), new ConsoleWriter());
-  }
-  public doThings() {
-    this.logger.log({
-      category: "info",
-      message: "Hello World",
-      timestamp: new Date(),
-    });
-  }
-}
-
-const client = new Client();
-client.doThings();

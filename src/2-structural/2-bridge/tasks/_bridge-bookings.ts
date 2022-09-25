@@ -1,6 +1,7 @@
-export class SpaceX {
+export class SpaceOperator {
   constructor() {
     console.log("Spacial flight operator SpaceX ready to work");
+    // ToDo: there is another space operator called BlueOrigin
   }
 
   public getAvailableSeats(flightId: string): number {
@@ -13,13 +14,13 @@ export class SpaceX {
     return `🚀 SpaceX Booking for ${flightId} with ${passengers} passengers`;
   }
 }
-// ToDo: there is another space operator called BlueOrigin
 
-export class SpaceTravels {
-  private readonly spaceX = new SpaceX();
+export class TourismAgency {
+  private readonly spaceX = new SpaceOperator();
 
   constructor() {
     console.log("Space tourism agency SpaceTravels ready to work");
+    // ToDo : also we need to work with their agency called AstroidBookings
   }
 
   public bookTrip(flightId: string, passengers: number): string {
@@ -35,9 +36,8 @@ export class SpaceTravels {
   }
 }
 
-// ToDo : also we want to work with another agency they have created called AstroidBookings
 export class Client {
-  private readonly spaceTravels = new SpaceTravels();
+  private readonly spaceTravels = new TourismAgency();
   public goToMars(): string {
     return this.spaceTravels.bookTrip("Mars", 2);
   }
