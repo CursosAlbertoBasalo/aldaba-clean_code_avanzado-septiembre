@@ -22,14 +22,17 @@ export class Charlie {
   }
 }
 
-// ToDo: improve this example with more methods on client, and maybe even some private ones
-
 export class Client {
-  public doSomething(): string {
+  // ToDo: depends on three classes...
+  public doSomethingAlpha(): string {
     const alpha = new Alpha();
     const alphaResult = alpha.methodAlpha("1");
+    return alphaResult;
+  }
+  public doSomethingBravoCharlie(): string {
+    // ToDo: reduce internal know how
     const bravo = new Bravo();
-    const bravoResult = bravo.methodBravo(alphaResult.length);
+    const bravoResult = bravo.methodBravo(this.doSomethingAlpha().length);
     const charlie = new Charlie();
     const charlieResult = charlie.methodCharlie("1");
     return bravoResult + charlieResult;
@@ -37,4 +40,5 @@ export class Client {
 }
 
 const client = new Client();
-console.log("client", client.doSomething());
+console.log("client", client.doSomethingAlpha());
+console.log("client", client.doSomethingBravoCharlie());

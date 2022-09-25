@@ -26,10 +26,12 @@ export class Notifier {
 }
 
 export class Client {
+  // ToDo: depends on three classes...
   private bookings: Bookings = new Bookings();
   private payments: Payments = new Payments();
   private notifier: Notifier = new Notifier();
 
+  // ToDo: reduce internal know how
   public createBooking(trip: string): string {
     const tripPrice = this.bookings.getPrice(trip);
     const paymentsResult = this.payments.makePayment(trip, tripPrice);
