@@ -1,6 +1,6 @@
 # Facade
 
-## Provides a simple interface to a set of interfaces in a subsystem.
+## Provides a **simple interface** to a set of _complex interfaces_ in a subsystem.
 
 ### Links
 
