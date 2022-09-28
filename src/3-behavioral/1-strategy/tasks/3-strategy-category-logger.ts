@@ -8,7 +8,7 @@ export class EntryStrategyFactory {
 
   public static chooseStrategy(entry: LogEntry): EntryStrategy {
     // ! chosen on parameter basis
-    // clean: replace if with a lookup table
+    // * clean: replace if with a lookup table
     if (entry.category === "error") {
       return EntryStrategyFactory.errorStrategy;
     } else {
