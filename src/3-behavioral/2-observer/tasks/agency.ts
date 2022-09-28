@@ -21,6 +21,7 @@ export class Agency {
     const user = "";
     return new Booking(bookingId, trip, user, price, "Pending", new Date(), new Date());
   }
+
   public cancelBooking(booking: Booking): Booking {
     if (new Date().getFullYear() - booking.createdAt.getFullYear() > 1) {
       throw new Error("The booking is too old to be canceled");
